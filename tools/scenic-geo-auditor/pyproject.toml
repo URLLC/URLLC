@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scenic-geo-auditor"
+version = "0.1.0"
+description = "Audit scenic-area coordinates with candidate scoring and review routing."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+scenic-geo-auditor = "scenic_geo_auditor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

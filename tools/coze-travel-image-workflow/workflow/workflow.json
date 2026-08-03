@@ -1,0 +1,47 @@
+{
+  "name": "travel-card-image-workflow",
+  "version": "0.1.0",
+  "description": "A sanitized reference workflow for generating travel recommendation card images.",
+  "nodes": [
+    {"id": "input", "type": "input", "title": "景点输入"},
+    {"id": "search", "type": "search", "title": "联网资料检索"},
+    {"id": "feature_extract", "type": "llm", "title": "景色特征提炼"},
+    {"id": "title_generate", "type": "llm", "title": "主副标题生成"},
+    {"id": "prompt_build", "type": "code", "title": "出图提示词组装"},
+    {"id": "prompt_optimize", "type": "plugin", "title": "提示词优化"},
+    {"id": "image_1", "type": "image_generation", "title": "自然风光"},
+    {"id": "image_2", "type": "image_generation", "title": "人文纪实"},
+    {"id": "image_3", "type": "image_generation", "title": "晨景"},
+    {"id": "image_4", "type": "image_generation", "title": "夜景"},
+    {"id": "image_5", "type": "image_generation", "title": "航拍"},
+    {"id": "image_6", "type": "image_generation", "title": "近景细节"},
+    {"id": "image_7", "type": "image_generation", "title": "节气氛围"},
+    {"id": "image_8", "type": "image_generation", "title": "旅行卡片"},
+    {"id": "output", "type": "output", "title": "标题与八张图片"}
+  ],
+  "connections": [
+    ["input", "search"],
+    ["search", "feature_extract"],
+    ["feature_extract", "title_generate"],
+    ["feature_extract", "prompt_build"],
+    ["prompt_build", "prompt_optimize"],
+    ["prompt_optimize", "image_1"],
+    ["prompt_optimize", "image_2"],
+    ["prompt_optimize", "image_3"],
+    ["prompt_optimize", "image_4"],
+    ["prompt_optimize", "image_5"],
+    ["prompt_optimize", "image_6"],
+    ["prompt_optimize", "image_7"],
+    ["prompt_optimize", "image_8"],
+    ["title_generate", "output"],
+    ["image_1", "output"],
+    ["image_2", "output"],
+    ["image_3", "output"],
+    ["image_4", "output"],
+    ["image_5", "output"],
+    ["image_6", "output"],
+    ["image_7", "output"],
+    ["image_8", "output"]
+  ]
+}
+

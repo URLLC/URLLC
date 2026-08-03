@@ -1,0 +1,3 @@
+id,service_name,title,url,raw_content,image_urls
+1,示例古镇,春日漫游,,"<h2>示例古镇</h2><p>河道两岸保留了传统街巷。</p><p>河道两岸保留了传统街巷。</p><p>长按识别二维码关注我们</p>","https://example.com/a.jpg?utm_source=test;https://example.com/a.jpg;https://example.com/qrcode.png"
+2,示例山景,云海日出,,"<p>清晨登高可以看到云海。</p><p>阅读原文</p><p>建议预留两小时游览。</p>",https://example.com/mountain.jpg
