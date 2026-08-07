@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-50: #F5F3FF;
+  --color-purple-100: #EDE9FE;
+  --color-purple-200: #DDD6FE;
+  --color-purple-300: #C4B5FD;
+  --color-purple-400: #A78BFA;
+  --color-purple-500: #7C5FFF;
+  --color-purple-600: #6D4FE0;
+  --color-purple-700: #5B3EC4;
+  --color-purple-800: #4A2FA8;
+  --color-purple-900: #3B228C;
+
+  --color-pink-50: #FDF2F8;
+  --color-pink-100: #FCE7F3;
+  --color-pink-200: #FBCFE8;
+  --color-pink-300: #F9A8D4;
+  --color-pink-400: #F472B6;
+  --color-pink-500: #EC4899;
+
+  --color-surface: #FAFAFA;
+  --color-card: #FFFFFF;
+
+  --font-sans: "Inter", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    background:
+      radial-gradient(circle at 8% 0%, rgba(124, 95, 255, 0.08), transparent 28rem),
+      radial-gradient(circle at 92% 12%, rgba(255, 151, 191, 0.10), transparent 25rem),
+      #F8F7FC;
+    color: #1E1B2E;
+    font-family: var(--font-sans);
+  }
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(255,255,255,.78);
+    border: 1px solid rgba(255,255,255,.88);
+    box-shadow: 0 20px 60px rgba(47,36,94,.08);
+    backdrop-filter: blur(18px);
+  }
+}
+
+/* Custom scrollbar */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Leaflet overrides */
+.custom-marker { background: transparent !important; border: none !important; }
+.custom-popup .leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  font-family: var(--font-sans);
+}
+.custom-tooltip {
+  background: #7C5FFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-family: var(--font-sans);
+  box-shadow: 0 2px 8px rgba(124,95,255,0.3);
+}
+.custom-tooltip::before { border-top-color: #7C5FFF; }
